@@ -13,6 +13,7 @@ import {getClient} from '../utils/sanity'
        data: {data}
       },
       revalidate: 50
+      //HTML: <JSONPretty style={{maxWidth: "100ch", overflowX: "scroll", boxShadow: "0 0 5px rgba(0,0,0,.3"}} id="json-pretty" data={data}></JSONPretty>
     }
   }
 
@@ -20,26 +21,16 @@ export default function Home({data}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>El Pasquino</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js</a> with <a href="https://sanity.io">Sanity.io Data</a>
+          El Pasquino
         </h1>
         <br />
-        <JSONPretty style={{maxWidth: "100ch", overflowX: "scroll", boxShadow: "0 0 5px rgba(0,0,0,.3"}} id="json-pretty" data={data}></JSONPretty>
-
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-        <p className={styles.description}>
-          Or modify your data API with <a href="/studio/">Sanity Studio</a>
-        </p>
-
+        
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Next.js Documentation &rarr;</h3>

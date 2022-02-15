@@ -29,7 +29,8 @@ const Hero = () => {
                 margin: 0px 20px 0px 20px;
             }
             img {
-                width: 40%;
+                
+                max-width: 400px;
             }
 
         

@@ -1,14 +1,16 @@
 {
   "root": true,
   "project": {
-    "name": "ElPasquinoProject"
+    "name": "Basic Next.js Site",
+    "basePath": "/studio"
   },
   "api": {
-    "projectId": "zhxqf9jz",
-    "dataset": "test"
+    "projectId": "PULLED_FROM_ENV",
+    "dataset": "PULLED_FROM_ENV"
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool"
@@ -20,10 +22,8 @@
       ]
     }
   },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
-    }
-  ]
+  "parts": [{
+    "name": "part:@sanity/base/schema",
+    "path": "./schemas/schema"
+  }]
 }

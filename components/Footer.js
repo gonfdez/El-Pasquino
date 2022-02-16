@@ -16,7 +16,7 @@ return (
                  <img src="/twitter.svg" alt="Twitter" /> {/*Enlace a twitter de el pasquino */}
             </div> 
         </div>
-        <span className="d">Proyecto nacido en Madrid</span>
+        <span className="d">Proyecto nacido en Madrid, España.</span>
     </div>
     <style jsx>{`
         h4 {

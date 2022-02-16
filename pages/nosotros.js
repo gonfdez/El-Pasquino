@@ -1,16 +1,14 @@
 // Components
 import Layout from '../components/Layout';
-import Hero from '../components/hero0';
+import NosotrosComponent from '../components/NosotrosComponent';
 
 
 export default function Home({}) {
   return (
     <>
     <Layout>  
-      <Hero/>
+        <NosotrosComponent/>
     </Layout>
     </>
   );
 }
-
-

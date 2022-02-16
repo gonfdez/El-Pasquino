@@ -26,6 +26,7 @@ export async function getStaticProps(context) {
   const post = await client.fetch(`
     *[_type == "post" && slug.current == $slug][0]
   `, { slug })
+  console.log(post);
   return {
     props: {
       post

@@ -10,8 +10,6 @@ const Hero = () => {
                 Bienvenido a <b>El Pasquino</b><br/>
                 Actualmente nos encontramos desarrollando nuestra revista digital.
             </span>
-        
-
         </div>
         <style jsx>{`
             .hero {
@@ -29,11 +27,8 @@ const Hero = () => {
                 margin: 0px 20px 0px 20px;
             }
             img {
-                
                 max-width: 400px;
             }
-
-        
         `}</style>
         <Script id="heroAnimation" strategy="lazyOnload">{`
             text0 = document.getElementById('heroText');
@@ -52,12 +47,9 @@ const Hero = () => {
                 }
             }
             window.setInterval(animation, 8000);
-
         `}</Script>
         </>
     );
 } 
-
-
 
 export default Hero;

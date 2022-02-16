@@ -1,4 +1,5 @@
 import Divider from '../components/Divider';
+import Link from 'next/link'
 
 const NavBar = () => {
     return (
@@ -10,9 +11,14 @@ const NavBar = () => {
                 </h4>
                 <div className="navMenu">
                     <span>
-                        <a href="">
-                            Nosotros
-                        </a>
+                        <Link href="/">
+                            <a>Portada</a>
+                        </Link>
+                    </span>
+                    <span>
+                        <Link href="/nosotros">
+                            <a>Nosotros</a>
+                        </Link>
                     </span>
                 </div> 
             </nav>
@@ -41,7 +47,9 @@ const NavBar = () => {
             .navMenu{
                 justify-content: space-between;
             }
-            
+            span {
+                margin-left: 20px;
+            }
 
         `}</style>
         </>

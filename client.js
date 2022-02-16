@@ -1,0 +1,8 @@
+// client.js
+import sanityClient from '@sanity/client'
+
+export default sanityClient({
+  projectId: 'zhxqf9jz', // you can find this in sanity.json
+  dataset: 'test', // or the name you chose in step 1
+  useCdn: true // `false` if you want to ensure fresh data
+})

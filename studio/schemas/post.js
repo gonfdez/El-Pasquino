@@ -1,16 +1,16 @@
 export default {
   name: 'post',
-  title: 'Post',
+  title: 'Articulo',
   type: 'document',
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Titulo',
       type: 'string',
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Enlace',
       type: 'slug',
       options: {
         source: 'title',
@@ -19,13 +19,13 @@ export default {
     },
     {
       name: 'author',
-      title: 'Author',
+      title: 'Autor',
       type: 'reference',
       to: {type: 'author'},
     },
     {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Imagen principal',
       type: 'image',
       options: {
         hotspot: true,
@@ -33,18 +33,18 @@ export default {
     },
     {
       name: 'categories',
-      title: 'Categories',
+      title: 'Categorias',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
     },
     {
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Publicado el',
       type: 'datetime',
     },
     {
       name: 'body',
-      title: 'Body',
+      title: 'Cuerpo',
       type: 'blockContent',
     },
   ],

@@ -5,12 +5,12 @@ export default {
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'Nombre',
       type: 'string',
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Enlace',
       type: 'slug',
       options: {
         source: 'name',
@@ -19,7 +19,7 @@ export default {
     },
     {
       name: 'image',
-      title: 'Image',
+      title: 'Imagen',
       type: 'image',
       options: {
         hotspot: true,
@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'bio',
-      title: 'Bio',
+      title: 'Biografia',
       type: 'array',
       of: [
         {

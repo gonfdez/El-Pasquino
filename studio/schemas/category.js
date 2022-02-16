@@ -5,12 +5,12 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Titulo',
       type: 'string',
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'Descripcion',
       type: 'text',
     },
   ],

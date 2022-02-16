@@ -45,7 +45,7 @@ return (
         font-size: 8pt;
         display: flex;
         margin-top: 10px;
-        margin-bottom: 10px;
+        padding-bottom: 10px;
         justify-content: center;
     }
     img {

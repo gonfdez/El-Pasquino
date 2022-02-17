@@ -6,7 +6,7 @@ const NosotrosComponent = () => {
             <div className="s">
                 <b>Fundador y director de prensa</b>
                 <br/>William Alexander Ruf
-            </div>{/* imagenes circulares de lis miembros del proyecto */}
+            </div>{/* imagenes circulares de los miembros del proyecto */}
             <div className="s">
                 <b>Equipo de desarrollo web</b>
                 <br/>Gonzalo Fernández Suárez

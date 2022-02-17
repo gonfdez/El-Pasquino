@@ -43,7 +43,8 @@ export const getServerSideProps = async pageContext => {
 
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];
-
+  console.log(post);
+  
   if (!post) {
     return {
       notFound: true

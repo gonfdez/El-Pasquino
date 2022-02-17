@@ -5,7 +5,7 @@ const NosotrosComponent = () => {
             <h3>Equipo</h3>
             <div className="s">
                 <b>Fundador y director de prensa</b>
-                <br/>William Alexander ruf
+                <br/>William Alexander Ruf
             </div>{/* imagenes circulares de lis miembros del proyecto */}
             <div className="s">
                 <b>Equipo de desarrollo web</b>

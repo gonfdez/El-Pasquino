@@ -25,7 +25,12 @@ export const Post = ({ title, body, image }) => {
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
         <div className={styles.body}>
-          <BlockContent blocks={body} />
+          <BlockContent 
+            blocks={body} 
+            imageOptions={{w: 320, h: 240, fit: 'max'}}
+            projectId="zhxqf9jz"
+            dataset="production"
+          />
         </div>
       </div>
     </div>
@@ -64,6 +69,5 @@ export const getServerSideProps = async pageContext => {
     }
   }
 };
-
 
 export default Post;

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import styles from '../../styles/Post.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 
+import Layout from '../../components/Layout'
+
 export const Post = ({ title, body, image }) => {
   const [imageUrl, setImageUrl] = useState('');
 
@@ -16,6 +18,7 @@ export const Post = ({ title, body, image }) => {
   }, [image]);
 
   return (
+    <Layout>
     <div>
       <div className={styles.main}>
         <h1>{title}</h1>
@@ -26,6 +29,7 @@ export const Post = ({ title, body, image }) => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

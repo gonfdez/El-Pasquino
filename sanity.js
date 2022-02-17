@@ -14,7 +14,7 @@ import {
       *
       * https://nextjs.org/docs/basic-features/environment-variables
       **/
-    dataset: 'test',
+    dataset: 'production',
     projectId: 'zhxqf9jz',
     useCdn: true,
     /**

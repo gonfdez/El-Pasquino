@@ -40,8 +40,8 @@ export const getServerSideProps = async pageContext => {
     }
   }
 
-  const query = encodeURIComponent(`*[ _type == "property" ]`);
-  const url = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/test?query=${query}`;
+  const query = encodeURIComponent(`*[ _type == "post" ]`);
+  const url = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
 
   const result = await fetch(url).then(res => res.json());
   console.log(result);

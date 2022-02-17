@@ -4,12 +4,22 @@ const NosotrosComponent = () => {
         <div className="container">
             <h3>Equipo</h3>
             <div className="s">
-                <b>Fundador y director de prensa</b>
-                <br/>William Alexander Ruf
-            </div>{/* imagenes circulares de los miembros del proyecto */}
+                <b>Comité editorial (Artículos)</b><br/>
+                Daniel González Barros
+                <br/>
+                Bosco Izuzquiza Vázquez
+                <br/>
+                Juanjo Romero Martínez
+            </div>
             <div className="s">
-                <b>Equipo de desarrollo web</b>
-                <br/>Gonzalo Fernández Suárez
+                <b>Comité editorial (Multimedia)</b><br/>
+                Íñigo Izuzquiza Vázquez
+                <br/>
+                William Alexander Ruf Cabezas
+            </div>
+            <div className="s">
+                <b>Equipo de desarrollo web</b><br/>
+                Gonzalo Fernández Suárez
             </div>
 
         </div>
@@ -28,7 +38,8 @@ const NosotrosComponent = () => {
                 text-align: center;
             }
             .s {
-                margin-top: 10px;
+                margin-top: 30px;
+                line-height : 30px;
             }
         `}</style>
         </>

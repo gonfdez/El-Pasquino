@@ -19,7 +19,7 @@ export const Post = ({ title, body, image }) => {
 
   return (
     <Layout>
-    <div>
+    <div className={styles.container}>
       <div className={styles.main}>
         <h1>{title}</h1>
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
@@ -35,8 +35,6 @@ export const Post = ({ title, body, image }) => {
 
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug;
-  
-  console.log(pageSlug);
 
   if (!pageSlug) {
     return {
@@ -48,9 +46,9 @@ export const getServerSideProps = async pageContext => {
   const url = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
 
   const result = await fetch(url).then(res => res.json());
-  console.log(result);
+
   const post = result.result[0];
-  console.log(post);
+
 
   if (!post) {
     return {

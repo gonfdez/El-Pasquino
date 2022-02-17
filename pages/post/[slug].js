@@ -9,7 +9,7 @@ export const Post = ({ title, body, image }) => {
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
       projectId: 'zhxqf9jz',
-      dataset: 'test',
+      dataset: 'production',
     });
 
     setImageUrl(imgBuilder.image(image));

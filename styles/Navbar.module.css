@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     height: 7vh;
-    
+    min-height: 40px;
 }
 .navMenu{
     justify-content: space-between;

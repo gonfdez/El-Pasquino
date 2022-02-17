@@ -13,15 +13,16 @@ const Hero = () => {
         </div>
         <style jsx>{`
             .hero {
-                height: 100vh;
+                min-height: 100vh;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                padding-bottom: 20px;
             }
             #heroText {
-                transition: opacity 2s;
+                transition: all 2s;
                 justify-content: center;
                 text-align: center;
                 margin: 0px 20px 0px 20px;

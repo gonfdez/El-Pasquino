@@ -44,7 +44,7 @@ export const getServerSideProps = async pageContext => {
   const url = `https://zhxqf9jz.api.sanity.io/v1/data/query/test?query=${query}`;
 
   const result = await fetch(url).then(res => res.json());
-  console,log(result);
+  console.log(result);
   const post = result.result[0];
   console.log(post);
 

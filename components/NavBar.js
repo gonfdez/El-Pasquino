@@ -1,11 +1,11 @@
 import Divider from '../components/Divider';
 import Link from 'next/link'
-import styles from '../styles/NavBar.module.css'
+import styles from '../styles/Navbar.module.css'
 
 const NavBar = () => {
     return (
         <>
-        <div className={styles.navContainer} styles='background-color: #FFFF;'>
+        <div className={styles.navContainer} >
             <nav className={styles.nav}>
                 <h4 className={styles.logo}>
                     El Pasquino

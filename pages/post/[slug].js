@@ -32,6 +32,8 @@ export const Post = ({ title, body, image }) => {
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug;
   
+  console.log(pageSlug);
+
   if (!pageSlug) {
     return {
       notFound: true
@@ -44,7 +46,7 @@ export const getServerSideProps = async pageContext => {
   const result = await fetch(url).then(res => res.json());
   const post = result.result[0];
   console.log(post);
-  
+
   if (!post) {
     return {
       notFound: true

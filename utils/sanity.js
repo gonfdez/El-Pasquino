@@ -14,9 +14,9 @@ import {
       *
       * https://nextjs.org/docs/basic-features/environment-variables
       **/
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    useCdn: process.env.NODE_ENV === 'production',
+    dataset: 'test',
+    projectId: 'zhxqf9jz',
+    useCdn: true,
     /**
       * Set useCdn to `false` if your application require the freshest possible
       * data always (potentially slightly slower and a bit more expensive).

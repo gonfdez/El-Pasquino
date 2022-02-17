@@ -1,37 +1,60 @@
-import client from '../../client'
+import imageUrlBuilder from '@sanity/image-url';
+import { useState, useEffect } from 'react';
+import styles from '../../styles/Post.module.css';
+import BlockContent from '@sanity/block-content-to-react';
 
-const Post = ({post}) => {
-  
+export const Post = ({ title, body, image }) => {
+  const [imageUrl, setImageUrl] = useState('');
+
+  useEffect(() => {
+    const imgBuilder = imageUrlBuilder({
+      projectId: 'zhxqf9jz',
+      dataset: 'test',
+    });
+
+    setImageUrl(imgBuilder.image(image));
+  }, [image]);
+
   return (
-    <article>
-      <h1>{post?.slug?.current}</h1>
-    </article>
-  )
-}
+    <div>
+      <div className={styles.main}>
+        <h1>{title}</h1>
+        {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(
-    `*[_type == "post" && defined(slug.current)][].slug.current`
-  )
+        <div className={styles.body}>
+          <BlockContent blocks={body} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-  return {
-    paths: paths.map((slug) => ({params: {slug}})),
-    fallback: true,
-  }
-}
-
-export async function getStaticProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params
-  const post = await client.fetch(`
-    *[_type == "post" && slug.current == $slug][0]
-  `, { slug })
-  console.log(post);
-  return {
-    props: {
-      post
+export const getServerSideProps = async pageContext => {
+  const pageSlug = pageContext.query.slug;
+  
+  if (!pageSlug) {
+    return {
+      notFound: true
     }
   }
-}
 
-export default Post
+  const query = encodeURIComponent(`*[ _type == "post" && slug.current == "${pageSlug}" ]`);
+  const url = `https://zhxqf9jz.api.sanity.io/v1/data/query/production?query=${query}`;
+
+  const result = await fetch(url).then(res => res.json());
+  const post = result.result[0];
+
+  if (!post) {
+    return {
+      notFound: true
+    }
+  } else {
+    return {
+      props: {
+        body: post.body,
+        title: post.title,
+        image: post.mainImage,
+      }
+    }
+  }
+};

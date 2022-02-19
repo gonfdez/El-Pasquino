@@ -5,8 +5,9 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import Layout from '../../components/Layout'
 
-export const Post = ({ title, body, image }) => {
+export const Post = ({ title, body, image, authors, publishedAt }) => {
   const [imageUrl, setImageUrl] = useState('');
+  const [mappedAuthors, setMappedAuthors] = useState([]);
 
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
@@ -16,25 +17,55 @@ export const Post = ({ title, body, image }) => {
 
     setImageUrl(imgBuilder.image(image));
   }, [image]);
+  
+  useEffect(() => {
+    if (authors.length) {
+      const imgBuilder = imageUrlBuilder({
+        projectId: 'zhxqf9jz',
+        dataset: 'production',
+      });
+      setMappedAuthors(
+        authors.map(p => {
+          return {
+            ...p,
+            image: imgBuilder.image(p.image).width(500).height(250),
+          }
+        })
+      );
+    } else {
+      setMappedAuthors([]);
+    }
+  }, [authors]);
+
+
 
   return (
-    <Layout>
     <div className={styles.container}>
       <div className={styles.main}>
-        <h1>{title}</h1>
+        <div className={styles.publishedAt}>
+          {publishedAt.replace('T',' ').replace('Z', '').substring(0, publishedAt.length-8)}
+        </div>
+        <h1 className={styles.title}>{title}</h1>
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
-
         <div className={styles.body}>
           <BlockContent 
             blocks={body} 
-            imageOptions={{w: 320, h: 240, fit: 'max'}}
+            imageOptions={{w:350}}
             projectId="zhxqf9jz"
             dataset="production"
           />
         </div>
+        <div className={styles.author}>
+        <p className={styles.authorTitle}>Autor:</p>
+        {mappedAuthors.length ? mappedAuthors.map((p) => (
+              <p className={styles.authorName}>{p.name}</p>
+          )) : <> Anónimo </>}
+        </div>
+        <p className={styles.publishedAt}>
+          Fecha de publicación: {publishedAt.replace('T',' ').replace('Z', '').substring(0, publishedAt.length-8)}
+        </p>
       </div>
     </div>
-    </Layout>
   );
 };
 
@@ -53,18 +84,28 @@ export const getServerSideProps = async pageContext => {
   const result = await fetch(url).then(res => res.json());
 
   const post = result.result[0];
-  console.log(post);
+  
 
   if (!post) {
     return {
       notFound: true
     }
   } else {
+    // Obetener informacion de las referencias
+    if (!post.author) {
+      var refResult = null;
+    } else {
+      var queryOne = encodeURIComponent(`*[ _type == "author" && _id == "${post.author['_ref']}" ]`);
+      var urlOne = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/production?query=${queryOne}`;
+      var refResult = await fetch(urlOne).then(res => res.json());
+    }  
     return {
       props: {
         body: post.body,
         title: post.title,
         image: post.mainImage,
+        authors: (refResult ? refResult.result : [] ),
+        publishedAt: post.publishedAt,
       }
     }
   }

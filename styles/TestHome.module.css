@@ -1,0 +1,95 @@
+
+.main {
+  padding-top: 7vh;
+  padding-bottom: 30px;
+  min-height: 100vh;
+}
+
+.main h1 {
+text-align: center;
+margin: 0px;
+}
+
+.title {
+  text-align: center;
+  margin: 30px 0px 0px 0px;
+}
+
+.feed {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.postContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.post {
+margin: 10px;
+width: 100%;
+cursor: pointer;
+max-width: calc(100vw - 50px);
+padding:10px;
+}
+
+.verticalDivider {
+  display: none;
+}
+
+.mainImage {
+width: 100%;
+transition: 0.2s;
+border-radius: 5px;
+max-width: calc(100vw - 50px);
+}
+.post:hover {
+color: rgb(15, 25, 117);
+transition: 0.3s;
+}
+
+.categoriesContainer {
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+flex-wrap: wrap;
+margin-top: 5px;
+}
+
+.categoriesContainer p {
+  font-size: 8pt;
+  margin: 0px;
+  padding: 3px;
+}
+
+/*( tablets i IPads, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* (Ordenadores, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+.post {
+  width: 27vw;
+}
+
+.categoriesContainer p {
+  font-size: 12pt;
+  margin: 0px;
+  padding: 3px;
+}
+
+.main h3 {
+  font-size: 25pt;
+  }
+
+.verticalDivider {
+  display: block;
+  height: 400px;
+  border-right: 2px solid black;
+}
+
+}

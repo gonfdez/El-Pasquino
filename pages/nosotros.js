@@ -6,9 +6,7 @@ import NosotrosComponent from '../components/NosotrosComponent';
 export default function Home({}) {
   return (
     <>
-    <Layout>  
         <NosotrosComponent/>
-    </Layout>
     </>
   );
 }

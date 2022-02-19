@@ -41,13 +41,13 @@ const Hero = () => {
                 else {
                     text0.style.opacity = 0;  
                     setTimeout(function(){
-                        if (c%2==0) {text0.innerHTML ="<b>¿Te interesa colaborar con nosotros?</b><br/>No dudes en escribirnos un correo con tus propuestas de artículos a:<br/><a href='mailto:revista@elpasquino.org'> revista@elpasquino.org</a>";}
+                        if (c%2==0) {text0.innerHTML ="<b>¿Te interesa colaborar con nosotros?</b><br/>No dudes en escribirnos un correo con tus propuestas de artículos a:<br/><a href='mailto:revista@elpasquino.org'>revista@elpasquino.org</a>";}
                         else {text0.innerHTML ="Bienvenido a <b>El Pasquino</b><br/>Actualmente nos encontramos desarrollando nuestra revista digital.";}
                         c++;
                     }, 2001);
                 }
             }
-            window.setInterval(animation, 8000);
+            window.setInterval(animation, 4000);
         `}</Script>
         </>
     );

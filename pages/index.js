@@ -6,9 +6,7 @@ import Hero from '../components/hero0';
 export default function Home({}) {
   return (
     <>
-    <Layout>  
       <Hero/>
-    </Layout>
     </>
   );
 }

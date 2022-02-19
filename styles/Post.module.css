@@ -1,5 +1,5 @@
   .container {
-    margin-top: 8vh;
+    padding-top: max(45px, 8vh);
   }
   
   .main {
@@ -10,11 +10,65 @@
   }
   .mainImage {
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .body {
+    letter-spacing: 0.9px;
+    line-height: 30px;
+  }
+  .body div figure {
+      display: flex;
+      justify-content: center;
+  }
+  .body blockquote {
+    text-indent: 40px;
+    text-align: justify;
+    font-size: 20px;
   }
   .body p {
     font-size: 24px;
     text-indent: 50px;
     line-height: 45px;
     text-align: justify;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.7px;
+  }
+
+  .body img{
+    max-width: calc(100vw - 50px);
+  }
+
+  .publishedAt {
+    display: block;
+    text-align: center;
+    font-size: 14pt;
+    font-style: italic;
+  }
+
+  .title {
+    margin: 10px 0px 10px 0px;
+  }
+  .authorTitle {
+    text-align: justify;
+    font-style: italic;
+  }
+  .author {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  
+  }
+
+  .author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  .authorName {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
   }

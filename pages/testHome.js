@@ -3,6 +3,7 @@ import styles from '../styles/TestHome.module.css'
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Divider from '../components/Divider';
 
 
 export default function TestHome({ posts }) {
@@ -34,19 +35,20 @@ export default function TestHome({ posts }) {
   return (
     <div>
       <div className={styles.main}>
-        <h3 className={styles.title}>Últimos artículos</h3>
+        <h3 className={styles.titleOne}>Últimos artículos</h3>
         <div className={styles.feed}>
           {mappedPosts.length ? mappedPosts.map((p, index) => (
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainer}>
               <div className={styles.post}>
                 {/* {publishedAt.replace('T',' ').replace('Z', '').substring(0, publishedAt.length-8)} */}
-                <h3>{p.title}</h3>
+                <h3 className={styles.title}>{p.title}</h3>
                 <img className={styles.mainImage} src={p.mainImage} />
                 <div className={styles.categoriesContainer}>
                   {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
                 </div>
               </div>
               {mappedPosts.length-1 > index && (index%2!=0 || index == 0) ? <div className={styles.verticalDivider}></div> : <></> }
+              {mappedPosts.length-1 > index && <div className={styles.hr}><Divider/></div>}
             </div>
           )) : <>No Posts Yet</>}
         </div>

@@ -59,7 +59,7 @@ border-radius: 20px;
 }
 
 .post:hover .mainImage {
-  width: 100%;
+  width: 95%;
 }
 
 .post:hover h3 {

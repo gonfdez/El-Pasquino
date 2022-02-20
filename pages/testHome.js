@@ -42,8 +42,9 @@ export default function TestHome({ posts }) {
             (index!=0 ? //Post que no son el primero
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainer}>
               <div className={styles.post}>
-                {/* {publishedAt.replace('T',' ').replace('Z', '').substring(0, publishedAt.length-8)} */}
+                <p className={styles.publishedAt}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p>
                 <h3 className={styles.title}>{p.title}</h3>
+                  <p className={styles.description}>{p.subtitle}</p>
                 <div className={styles.categoriesContainer}>
                   {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
                 </div>
@@ -54,14 +55,25 @@ export default function TestHome({ posts }) {
            : // Codigo del primer post (El ultimo publicado)
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainerM}>
               <div className={"postM "+styles.postM} >
+                <p className={styles.publishedAt}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p>
                 <h3 className={styles.titleM}>{p.title}</h3>
+                  <img className={styles.mainImage} src={p.mainImage} />
+                  <p className={styles.description}>{p.subtitle}</p>
                 <div className={styles.categoriesContainerM}>
                   {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
                 </div>
               </div>
-              <style jsx>{`  
-                @media only screen and (min-width: 768px) {background-image: url("${p.mainImage}");}
-                @media only screen and (min-width: 992px) {background-image: url("${p.mainImage}");}
+              <style jsx>{` 
+              
+              .postM {
+                background-color: white;
+                background-image: url("");
+                }
+              @media only screen and (min-width: 992px) {
+                .postM {
+                  background-image: url("${p.mainImage}");
+                }
+              } 
               `}</style>
               {/* Vertical divider modo ordenador */}
               {mappedPosts.length-1 > index && (index%2!=0 || index == 0) ? <div className={styles.verticalDivider}></div> : <></> }

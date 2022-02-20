@@ -16,7 +16,7 @@ margin: 0px;
   padding: 5px;
 }
 .title {
-  font-size: 10pt;
+  font-size: 13pt;
   text-align: center;
   margin: 0px;
   padding: 5px;
@@ -53,16 +53,6 @@ border-radius: 10px;
   display: none;
 }
 
-/* .mainImage {
-width: 90%;
-transition: 0.2s;
-border-radius: 20px;
-display:none;
-} */
-
-.post:hover .mainImage {
-  width: 95%;
-}
 
 .post:hover h3 {
   color: rgb(12, 12, 59);
@@ -74,6 +64,7 @@ justify-content: space-around;
 flex-direction: row;
 flex-wrap: wrap;
 margin-top: 5px;
+width: 90%;
 }
 
 .categoriesContainer p {
@@ -87,6 +78,9 @@ margin-top: 5px;
 }
 
 .postM {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90vw;
   min-height: 50vh;
   background: no-repeat right;
@@ -98,17 +92,41 @@ margin-top: 5px;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 5px;
+  align-items: center;
+  width: 90%;
   }
 
 .titleM {
   font-size: 25pt;
   text-align: left;
-  margin-top: 20px;
+  margin: 0px 20px 0px 0px;
   padding: 5px;
 }
 
+.mainImage {
+  width: 90%;
+  transition: 0.2s;
+  border-radius: 5px;
+  margin: 10px;
+  }
+
+  .description {
+    width: 80%;
+    letter-spacing: 0.6px;
+    text-align: center;
+  }
+
+  .publishedAt {
+    font-size: 10pt;
+    margin: 0px 10px 0px 5px;
+    text-align: right;
+  }
+
 /*( tablets i IPads, 768px and up) */
 @media only screen and (min-width: 768px) {
+.mainImage {
+  display: none;
+}
 
 .titleOne {
   margin-top: 30px;
@@ -143,6 +161,13 @@ margin-top: 5px;
   border-right: 2px dotted black;
   box-shadow: 2px 2px; */
 }
+
+.postM {
+  width: 90vw;
+  min-height: 50vh;
+  background: no-repeat right;
+}
+
 
 }
 

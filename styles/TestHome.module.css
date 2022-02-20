@@ -193,12 +193,13 @@ width: 90%;
     margin-top: 8px;
   }
   .titleM , .publishedAt {
-    padding: 5px;
+    padding: 10px;
   }
   .titleM , .publishedAt, .description  {
     width: auto;
     text-align: left;
     background-color: white;
+    border-radius: 2px;
   }
   .description {
     padding: 15px;

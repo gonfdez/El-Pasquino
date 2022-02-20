@@ -35,7 +35,7 @@ export default function TestHome({ posts }) {
   return (
     <div>
       <div className={styles.main}>
-        <h3 className={styles.titleOne}>Últimos artículos</h3>
+        {/* <h3 className={styles.titleOne}>Últimos artículos</h3> */}
         <div className={styles.feed}>
           
           {!mappedPosts.length ? <>No hay artículos</> :  mappedPosts.map((p, index) => (

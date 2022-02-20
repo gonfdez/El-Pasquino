@@ -213,8 +213,10 @@ width: 90%;
     /* min-height: 60vh; */
     text-align: left;
     background-position: 100% 10%;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 0px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   .categoriesContainerM {
     background-color: white;

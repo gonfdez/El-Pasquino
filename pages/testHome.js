@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/TestHome.module.css'
-import imageUrlBuilder from '@sanity/image-url';
+import imageUrlBuilder from '@sanity/image-url'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Divider from '../components/Divider';
@@ -17,18 +17,18 @@ export default function TestHome({ posts }) {
         projectId: 'zhxqf9jz',
         dataset: 'production',
       });
-
+    
       setMappedPosts(
-        posts.map(p => {
+        posts.map((p, index) => {
           return {
             ...p,
-            mainImage: imgBuilder.image(p.mainImage).width(500).height(250),
+            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(1000).height(500).blur(10): null,
           }
         })
       );
-    } else {
+     } else {
       setMappedPosts([]);
-    }
+     }
   }, [posts]);
 
 
@@ -37,12 +37,13 @@ export default function TestHome({ posts }) {
       <div className={styles.main}>
         <h3 className={styles.titleOne}>Últimos artículos</h3>
         <div className={styles.feed}>
-          {mappedPosts.length ? mappedPosts.map((p, index) => (
+          
+          {!mappedPosts.length ? <>No hay artículos</> :  mappedPosts.map((p, index) => (
+            (index!=0 ? //Post que no son el primero
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainer}>
               <div className={styles.post}>
                 {/* {publishedAt.replace('T',' ').replace('Z', '').substring(0, publishedAt.length-8)} */}
                 <h3 className={styles.title}>{p.title}</h3>
-                <img className={styles.mainImage} src={p.mainImage} />
                 <div className={styles.categoriesContainer}>
                   {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
                 </div>
@@ -50,7 +51,25 @@ export default function TestHome({ posts }) {
               {mappedPosts.length-1 > index && (index%2!=0 || index == 0) ? <div className={styles.verticalDivider}></div> : <></> }
               {mappedPosts.length-1 > index && <div className={styles.hr}><Divider/></div>}
             </div>
-          )) : <>No Posts Yet</>}
+           : // Codigo del primer post (El ultimo publicado)
+            <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainerM}>
+              <div className={"postM "+styles.postM} >
+                <h3 className={styles.titleM}>{p.title}</h3>
+                <div className={styles.categoriesContainerM}>
+                  {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
+                </div>
+              </div>
+              <style jsx>{`  
+                @media only screen and (min-width: 768px) {background-image: url("${p.mainImage}");}
+                @media only screen and (min-width: 992px) {background-image: url("${p.mainImage}");}
+              `}</style>
+              {/* Vertical divider modo ordenador */}
+              {mappedPosts.length-1 > index && (index%2!=0 || index == 0) ? <div className={styles.verticalDivider}></div> : <></> }
+              {/* Horizontal Divider Modo Movil */}
+              {mappedPosts.length-1 > index && <div className={styles.hr}><Divider/></div>}
+            </div>
+            )
+          ))}
         </div>
       </div>
     </div>
@@ -58,10 +77,10 @@ export default function TestHome({ posts }) {
 }
 
 export const getServerSideProps = async pageContext => {
-  const query = encodeURIComponent(`*[ _type == "post" ][0...6]{...,categories[]->{title}}`);
+  const query = encodeURIComponent(`*[ _type == "post" ][0...7]{...,categories[]->{title}}`);
   const url = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
   const result = await fetch(url).then(res => res.json());
-  console.log(result.result[0].categories);
+  // console.log(result.result[0].categories);
   if (!result.result || !result.result.length) {
     return {
       props: {
@@ -69,11 +88,10 @@ export const getServerSideProps = async pageContext => {
       }
     }
   } else {
-
-      return {
-        props: {
-          posts: result.result,
-        }
+    return {
+      props: {
+        posts: result.result,
+      }
     }
   }
 };

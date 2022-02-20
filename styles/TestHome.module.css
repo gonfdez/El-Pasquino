@@ -163,7 +163,7 @@ width: 90%;
 
 .postM {
   width: 90vw;
-  min-height: 50vh;
+  min-height: 80vh;
   background: no-repeat right;
   padding-bottom:20px;
   text-align: center;
@@ -210,9 +210,11 @@ width: 90%;
   }
 
   .postM {
-    justify-content: flex-end;
+    /* min-height: 60vh; */
     text-align: left;
-    background-position: 80% 20%;
+    background-position: 100% 10%;
+    justify-content: center;
+    padding: 0px;
   }
   .categoriesContainerM {
     background-color: white;

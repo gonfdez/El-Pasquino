@@ -22,7 +22,7 @@ export default function TestHome({ posts }) {
         posts.map((p, index) => {
           return {
             ...p,
-            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(700).height(350): null,
+            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(1000).height(500): null,
           }
         })
       );

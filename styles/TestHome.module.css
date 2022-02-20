@@ -83,7 +83,8 @@ width: 90%;
   align-items: center;
   width: 90vw;
   min-height: 50vh;
-  background: no-repeat right;
+  background: no-repeat;
+  background-position: top;
 }
 
 .categoriesContainerM {
@@ -118,15 +119,12 @@ width: 90%;
 
   .publishedAt {
     font-size: 10pt;
-    margin: 0px 10px 0px 5px;
+    margin: 0px;
     text-align: right;
   }
 
 /*( tablets i IPads, 768px and up) */
 @media only screen and (min-width: 768px) {
-.mainImage {
-  display: none;
-}
 
 .titleOne {
   margin-top: 30px;
@@ -138,6 +136,7 @@ width: 90%;
   max-width: 45vw;
   border: 2px dotted black;
   box-shadow: 2px 2px;
+  
 }
 .post:hover {
   border: 2px solid black;
@@ -166,6 +165,14 @@ width: 90%;
   width: 90vw;
   min-height: 50vh;
   background: no-repeat right;
+  padding-bottom:20px;
+  text-align: center;
+}
+
+.w100 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -173,7 +180,9 @@ width: 90%;
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+  .mainImage {
+    display: none;
+  }
   .post {
     max-width: 25vw;
     border: 2px dotted black;
@@ -182,10 +191,35 @@ width: 90%;
   .main h3 {
     font-size: 20pt;
     margin-top: 8px;
-    padding: 10px;
-    }
+  }
+  .titleM , .publishedAt {
+    padding: 5px;
+  }
+  .titleM , .publishedAt, .description  {
+    width: auto;
+    text-align: left;
+    background-color: white;
+  }
+  .description {
+    padding: 15px;
+  }
 
   .main p {
     font-size: 10pt;
   }
+
+  .postM {
+    justify-content: flex-end;
+    text-align: left;
+    background-position: 80% 20%;
+  }
+  .categoriesContainerM {
+    background-color: white;
+    width: 100%;
+    }
+
+  .w100 {
+    justify-content: flex-start;
+  }
+  
 }

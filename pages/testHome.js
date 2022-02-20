@@ -22,7 +22,7 @@ export default function TestHome({ posts }) {
         posts.map((p, index) => {
           return {
             ...p,
-            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(400).height(200): null,
+            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(700).height(350): null,
           }
         })
       );
@@ -55,10 +55,10 @@ export default function TestHome({ posts }) {
            : // Codigo del primer post (El ultimo publicado)
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainerM}>
               <div className={"postM "+styles.postM} >
-                <p className={styles.publishedAt}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p>
-                <h3 className={styles.titleM}>{p.title}</h3>
+                <div className={styles.w100}><p className={styles.publishedAt}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p></div>
+                <div className={styles.w100}><h3 className={styles.titleM}>{p.title}</h3></div>
                   <img className={styles.mainImage} src={p.mainImage} />
-                  <p className={styles.description}>{p.subtitle}</p>
+                  <div className={styles.w100}><p className={styles.description}>{p.subtitle}</p></div>
                 <div className={styles.categoriesContainerM}>
                   {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
                 </div>

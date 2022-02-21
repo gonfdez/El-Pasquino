@@ -152,7 +152,7 @@ font-style: italic;
 }
 .post {
   max-width: 45vw;
-  border: 2px dotted black;
+  border: 2px solid black;
   box-shadow: 2px 2px;
   
 }

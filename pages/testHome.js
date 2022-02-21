@@ -57,7 +57,7 @@ export default function TestHome({ posts }) {
                 <div className={styles.w100}><p className={styles.publishedAtM}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p></div>
                 <div className={styles.w100}><h3 className={styles.titleM}><mark>{p.title}</mark></h3></div>
                   <img className={styles.mainImage} src={p.mainImage} />
-                  <div className={styles.w100}><p className={styles.description}><mark>{p.subtitle}</mark></p></div>
+                  <div className={styles.w100}><p className={styles.descriptionM}><mark>{p.subtitle}</mark></p></div>
                   <div className={styles.w100}>
                     <div className={styles.categoriesContainerM}>
                       {p.categories.map((c)=>{ return <p><mark>{c.title}</mark></p>; })}

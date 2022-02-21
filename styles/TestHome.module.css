@@ -110,7 +110,6 @@
   text-align: right;
 }
 .titleM mark, .description mark, .publishedAtM mark, .categoriesContainerM mark {
-
   background-color: transparent;
 }
 
@@ -187,7 +186,7 @@
     padding: 10px 10px 10px 0px;
     line-height: 30pt;
   }
-  .titleM mark, .description mark, .publishedAtM mark {
+  .titleM mark, .description mark, .descriptionM mark,.publishedAtM mark {
     background-color: white;
     padding: 8px 8px 8px 0px;
   }
@@ -196,6 +195,13 @@
     background-color: white;
   }
   .description {
+    width: 90%;
+    text-indent: 1.5em;
+    padding: 10px 10px 10px 0px;
+    line-height: 20pt;
+    text-align: left;
+  }
+  .descriptionM {
     width: 40%;
     text-indent: 1.5em;
     padding: 10px 10px 10px 0px;

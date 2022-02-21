@@ -153,11 +153,11 @@ font-style: italic;
 .post {
   max-width: 45vw;
   border: 2px solid black;
-  box-shadow: 2px 2px;
+  box-shadow: 2px 2px 2px;
   
 }
 .post:hover {
-  border: 2px solid black;
+  
   transition: 0.3s;
   }
 
@@ -199,8 +199,8 @@ font-style: italic;
   }
   .post {
     max-width: 25vw;
-    border: 2px solid black;
-    box-shadow: 2px 2px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px;
   }
   .main h3 {
     font-size: 20pt;

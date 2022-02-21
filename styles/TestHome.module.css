@@ -95,7 +95,7 @@ font-style: italic;
   flex-wrap: wrap;
   margin-top: 5px;
   align-items: center;
-  /* width: 100%; */
+  width: 100%;
   font-style: italic;
   }
 
@@ -207,6 +207,7 @@ font-style: italic;
     padding: 10px 10px 10px 0px;
   }
   .description {
+    text-indent: 1.5em;
     padding: 10px 10px 10px 0px;
   }
   .titleM , .publishedAtM, .description, .categoriesContainerM  {
@@ -232,6 +233,7 @@ font-style: italic;
   .categoriesContainerM {
     justify-content: flex-start;
     padding: 5px 5px 5px 0px;
+    width: auto;
     }
 
     .categoriesContainerM p {

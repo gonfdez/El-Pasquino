@@ -65,6 +65,7 @@ flex-direction: row;
 flex-wrap: wrap;
 margin-top: 5px;
 width: 90%;
+font-style: italic;
 }
 
 .categoriesContainer p {
@@ -95,6 +96,7 @@ width: 90%;
   margin-top: 5px;
   align-items: center;
   /* width: 100%; */
+  font-style: italic;
   }
 
 .titleM {

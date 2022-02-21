@@ -218,9 +218,13 @@ font-style: italic;
     text-indent: 1.5em;
     padding: 10px 10px 10px 0px;
   }
-  .titleM , .publishedAtM, .description, .categoriesContainerM  {
+  .publishedAtM, .description, .categoriesContainerM  {
     text-align: left;
     line-height: 15pt;
+  }
+
+  .titleM {
+    line-height: 30pt;
   }
 
   .main p {

@@ -55,12 +55,12 @@ export default function TestHome({ posts }) {
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainerM}>
               <div className={"postM "+styles.postM} >
                 <div className={styles.w100}><p className={styles.publishedAtM}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p></div>
-                <div className={styles.w100}><h3 className={styles.titleM}>{p.title}</h3></div>
+                <div className={styles.w100}><h3 className={styles.titleM}><mark>{p.title}</mark></h3></div>
                   <img className={styles.mainImage} src={p.mainImage} />
-                  <div className={styles.w100}><p className={styles.description}>{p.subtitle}</p></div>
+                  <div className={styles.w100}><p className={styles.description}><mark>{p.subtitle}</mark></p></div>
                   <div className={styles.w100}>
                     <div className={styles.categoriesContainerM}>
-                      {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
+                      {p.categories.map((c)=>{ return <p><mark>{c.title}</mark></p>; })}
                     </div>
                 </div>
               </div>

@@ -46,7 +46,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-border-radius: 10px;
+border-radius: 0px;
 }
 
 .verticalDivider {
@@ -199,7 +199,7 @@ font-style: italic;
   }
   .post {
     max-width: 25vw;
-    border: 2px dotted black;
+    border: 2px solid black;
     box-shadow: 2px 2px;
   }
   .main h3 {

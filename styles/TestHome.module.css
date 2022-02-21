@@ -4,24 +4,6 @@
   padding-bottom: 30px;
   min-height: 100vh;
 }
-
-.main h1 {
-text-align: center;
-margin: 0px;
-}
-.titleOne {
-  font-size: 10pt;
-  text-align: center;
-  margin: 10px 0px 0px 0px;
-  padding: 5px;
-}
-.title {
-  font-size: 13pt;
-  text-align: center;
-  margin: 0px;
-  padding: 5px;
-}
-
 .feed {
   display: flex;
   justify-content: center;
@@ -29,55 +11,68 @@ margin: 0px;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .postContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-
 .post {
-margin: 5px;
-width: 100%;
-cursor: pointer;
-max-width: calc(100vw - 50px);
-padding:10px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-border-radius: 0px;
+  margin: 5px;
+  width: 100%;
+  cursor: pointer;
+  max-width: calc(100vw - 50px);
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
 }
-
-.verticalDivider {
-  display: none;
-}
-
-
 .post:hover h3 {
   color: rgb(12, 12, 59);
 }
-
-.categoriesContainer {
-display: flex;
-justify-content: space-around;
-flex-direction: row;
-flex-wrap: wrap;
-margin-top: 5px;
-width: 90%;
-font-style: italic;
+.publishedAt {
+  font-size: 10pt;
+  margin: 0px;
+  text-align: right;
 }
-
+.title {
+  font-size: 13pt;
+  text-align: center;
+  margin: 0px;
+  padding: 5px;
+}
+.mainImage {
+  width: 90%;
+  transition: 0.2s;
+  border-radius: 5px;
+  margin: 10px;
+}
+.categoriesContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  width: 90%;
+  font-style: italic;
+}
 .categoriesContainer p {
   font-size: 8pt;
   margin: 0px;
   padding: 3px;
 }
-
+.description {
+  width: 90%;
+  letter-spacing: 0.6px;
+  text-align: justify;
+}
 .hr {
   width: 100%;
 }
-
+.verticalDivider {
+  display: none;
+}
 .postM {
   display: flex;
   flex-direction: column;
@@ -87,7 +82,6 @@ font-style: italic;
   background: no-repeat;
   background-position: top;
 }
-
 .categoriesContainerM {
   display: flex;
   justify-content: space-around;
@@ -95,50 +89,31 @@ font-style: italic;
   flex-wrap: wrap;
   margin-top: 5px;
   align-items: center;
-  width: 100%;
+  width: 80%;
   font-style: italic;
   }
-
 .titleM {
   font-size: 25pt;
   text-align: left;
   margin: 5px 0px 0px 0px;
   padding: 5px;
 }
+.w100 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.mainImage {
-  width: 90%;
-  transition: 0.2s;
-  border-radius: 5px;
-  margin: 10px;
-  }
+.publishedAtM {
+  margin: 10px 0px 0px 0px;
+  font-size: 10pt;
+  text-align: right;
+}
+.titleM mark, .description mark, .publishedAtM mark, .categoriesContainerM mark {
 
-  .description {
-    width: 80%;
-    letter-spacing: 0.6px;
-    text-align: center;
-  }
+  background-color: transparent;
+}
 
-  .publishedAt {
-    font-size: 10pt;
-    margin: 0px;
-    text-align: right;
-  }
-  .w100 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .publishedAtM {
-    margin: 10px 0px 0px 0px;
-    font-size: 10pt;
-    text-align: right;
-  }
-  .titleM mark, .description mark, .publishedAtM mark, .categoriesContainerM mark {
-  
-    background-color: transparent;
-  }
 /*( tablets i IPads, 768px and up) */
 @media only screen and (min-width: 768px) {
 .publishedAtM {
@@ -207,24 +182,25 @@ font-style: italic;
     margin-top: 8px;
   }
   .titleM {
+    text-indent: 0;
+    width: 50%;
     padding: 10px 10px 10px 0px;
+    line-height: 30pt;
   }
-  .titleM mark, .description mark, .publishedAtM mark, .categoriesContainerM mark {
+  .titleM mark, .description mark, .publishedAtM mark {
     background-color: white;
+    padding: 8px 8px 8px 0px;
+  }
+  .categoriesContainerM mark {
     padding: 8px;
-    border-radius: 2px;
+    background-color: white;
   }
   .description {
+    width: 40%;
     text-indent: 1.5em;
     padding: 10px 10px 10px 0px;
-  }
-  .publishedAtM, .description, .categoriesContainerM  {
+    line-height: 20pt;
     text-align: left;
-    line-height: 15pt;
-  }
-
-  .titleM {
-    line-height: 30pt;
   }
 
   .main p {
@@ -232,7 +208,7 @@ font-style: italic;
   }
 
   .postM {
-    min-height: 80vh; 
+    min-height: 90vh; 
     text-align: left;
     background-position: 100% 0%;
     justify-content: flex-end;
@@ -245,6 +221,7 @@ font-style: italic;
     justify-content: flex-start;
     padding: 5px 5px 5px 0px;
     width: auto;
+    margin-bottom: 100px;
     }
 
     .categoriesContainerM p {

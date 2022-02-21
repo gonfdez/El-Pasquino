@@ -94,13 +94,13 @@ width: 90%;
   flex-wrap: wrap;
   margin-top: 5px;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   }
 
 .titleM {
   font-size: 25pt;
   text-align: left;
-  margin: 20px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
   padding: 5px;
 }
 
@@ -128,10 +128,17 @@ width: 90%;
     justify-content: center;
   }
 
+  .publishedAtM {
+    margin: 10px 0px 0px 0px;
+    font-size: 10pt;
+    text-align: right;
+  }
 
 /*( tablets i IPads, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+.publishedAtM {
+  margin: 20px 0px 0px 0px;
+}
 .titleOne {
   margin-top: 30px;
 }
@@ -194,17 +201,16 @@ width: 90%;
     font-size: 20pt;
     margin-top: 8px;
   }
-  .titleM , .publishedAt {
-    padding: 10px;
+  .titleM {
+    padding: 10px 10px 10px 0px;
   }
-  .titleM , .publishedAt, .description  {
-    width: auto;
+  .description {
+    padding: 10px 10px 10px 0px;
+  }
+  .titleM , .publishedAtM, .description, .categoriesContainerM  {
     text-align: left;
     background-color: white;
     border-radius: 2px;
-  }
-  .description {
-    padding: 15px;
   }
 
   .main p {
@@ -212,17 +218,22 @@ width: 90%;
   }
 
   .postM {
-    /* min-height: 60vh; */
+    min-height: 80vh; 
     text-align: left;
-    background-position: 100% 10%;
+    background-position: 100% 0%;
     justify-content: flex-end;
-    padding: 0px;
+    padding: 0px 0px 25px 10px;
     margin-bottom: 20px;
     margin-top: 20px;
+    background-size: 80%;
   }
   .categoriesContainerM {
-    background-color: white;
-    width: 100%;
+    justify-content: flex-start;
+    padding: 5px 5px 5px 0px;
+    }
+
+    .categoriesContainerM p {
+      margin: 0px 10px 0px 0px;
     }
 
   .w100 {

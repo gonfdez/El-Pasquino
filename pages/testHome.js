@@ -9,7 +9,6 @@ import Divider from '../components/Divider';
 export default function TestHome({ posts }) {
   const router = useRouter();
   const [mappedPosts, setMappedPosts] = useState([]);
-  const [mappedCategories, setMappedCategories] = useState([]);
 
   useEffect(() => {
     if (posts.length) {
@@ -22,7 +21,7 @@ export default function TestHome({ posts }) {
         posts.map((p, index) => {
           return {
             ...p,
-            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(1000).height(500): null,
+            mainImage: index==0 ? imgBuilder.image(p.mainImage).width(1000).height(700): null,
           }
         })
       );
@@ -55,12 +54,14 @@ export default function TestHome({ posts }) {
            : // Codigo del primer post (El ultimo publicado)
             <div onClick={() => router.push(`/post/${p.slug.current}`)} key={index} className={styles.postContainerM}>
               <div className={"postM "+styles.postM} >
-                <div className={styles.w100}><p className={styles.publishedAt}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p></div>
+                <div className={styles.w100}><p className={styles.publishedAtM}>{p.publishedAt.replace('T',' ').replace('Z', '').substring(0, p.publishedAt.length-8)}</p></div>
                 <div className={styles.w100}><h3 className={styles.titleM}>{p.title}</h3></div>
                   <img className={styles.mainImage} src={p.mainImage} />
                   <div className={styles.w100}><p className={styles.description}>{p.subtitle}</p></div>
-                <div className={styles.categoriesContainerM}>
-                  {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
+                  <div className={styles.w100}>
+                    <div className={styles.categoriesContainerM}>
+                      {p.categories.map((c)=>{ return <p>{c.title}</p>; })}
+                    </div>
                 </div>
               </div>
               <style jsx>{` 

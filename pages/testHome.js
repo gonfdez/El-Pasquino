@@ -90,10 +90,10 @@ export default function TestHome({ posts }) {
 }
 
 export const getServerSideProps = async pageContext => {
-  const query = encodeURIComponent(`*[ _type == "post" ][0...7]{...,categories[]->{title}}`);
+  const query = encodeURIComponent(`*[ _type == "post" ][0...7]{...,categories[]->{title}} | order( publishedAt desc) `);
   const url = `https://zhxqf9jz.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
   const result = await fetch(url).then(res => res.json());
-  // console.log(result.result[0].categories);
+  console.log(result.result[0]);
   if (!result.result || !result.result.length) {
     return {
       props: {

@@ -51,7 +51,7 @@ export default {
       name: 'publishedAt',
       title: 'Publicado el',
       type: 'datetime',
-      validation: Rule => Rule.required().error('Es necesaria una fecha de publicacion')
+      validation: Rule => Rule.required().error('Es necesaria la fecha de publicacion')
     },
     {
       name: 'body',

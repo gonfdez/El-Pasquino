@@ -7,11 +7,13 @@ export default {
       name: 'title',
       title: 'Titulo',
       type: 'string',
+      validation: Rule => Rule.required().warning('Es necesario un titulo')
     },
     {
       name: 'subtitle',
       title: 'Subtitulo',
       type: 'string',
+      validation: Rule => Rule.required().warning('Es necesario un subtitulo')
     },
     {
       name: 'slug',
@@ -21,6 +23,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required().warning('Es necesario un enlace')
     },
     {
       name: 'author',
@@ -35,22 +38,26 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: Rule => Rule.required().warning('Es necesaria una imagen principal')
     },
     {
       name: 'categories',
       title: 'Categorias',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+      validation: Rule => Rule.required().warning('Es necesaria al menos una categoria')
     },
     {
       name: 'publishedAt',
       title: 'Publicado el',
       type: 'datetime',
+      validation: Rule => Rule.required().warning('Es necesaria una fecha de publicacion')
     },
     {
       name: 'body',
       title: 'Cuerpo',
       type: 'blockContent',
+      validation: Rule => Rule.required().warning('Introduce el cuerpo del articulo')
     },
   ],
 

@@ -7,13 +7,13 @@ export default {
       name: 'title',
       title: 'Titulo',
       type: 'string',
-      validation: Rule => Rule.required().warning('Es necesario un titulo')
+      validation: Rule => Rule.required().error('Es necesario un titulo')
     },
     {
       name: 'subtitle',
       title: 'Subtitulo',
       type: 'string',
-      validation: Rule => Rule.required().warning('Es necesario un subtitulo')
+      validation: Rule => Rule.required().error('Es necesario un subtitulo')
     },
     {
       name: 'slug',
@@ -23,7 +23,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: Rule => Rule.required().warning('Es necesario un enlace')
+      validation: Rule => Rule.required().error('Es necesario un enlace')
     },
     {
       name: 'author',
@@ -38,26 +38,26 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required().warning('Es necesaria una imagen principal')
+      validation: Rule => Rule.required().error('Es necesaria una imagen principal')
     },
     {
       name: 'categories',
       title: 'Categorias',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
-      validation: Rule => Rule.required().warning('Es necesaria al menos una categoria')
+      validation: Rule => Rule.required().error('Es necesaria al menos una categoria')
     },
     {
       name: 'publishedAt',
       title: 'Publicado el',
       type: 'datetime',
-      validation: Rule => Rule.required().warning('Es necesaria una fecha de publicacion')
+      validation: Rule => Rule.required().error('Es necesaria una fecha de publicacion')
     },
     {
       name: 'body',
       title: 'Cuerpo',
       type: 'blockContent',
-      validation: Rule => Rule.required().warning('Introduce el cuerpo del articulo')
+      validation: Rule => Rule.required().error('Introduce el cuerpo del articulo')
     },
   ],
 

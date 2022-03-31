@@ -7,6 +7,7 @@ export default {
       name: 'name',
       title: 'Nombre',
       type: 'string',
+      validation: Rule => Rule.required().error('Es necesario un nombre')
     },
     {
       name: 'slug',
@@ -16,14 +17,16 @@ export default {
         source: 'name',
         maxLength: 96,
       },
+      validation: Rule => Rule.required().error('Introduce un enlace')
     },
     {
       name: 'image',
-      title: 'Imagen',
+      title: 'Imagen de avatar',
       type: 'image',
       options: {
         hotspot: true,
       },
+      validation: Rule => Rule.required().error('Obligatorio subir un avatar')
     },
     {
       name: 'bio',

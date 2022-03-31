@@ -7,6 +7,7 @@ export default {
       name: 'title',
       title: 'Titulo',
       type: 'string',
+      validation: Rule => Rule.required().error('Introduce un titulo')
     },
     {
       name: 'description',

@@ -5,7 +5,7 @@
     "basePath": "/studio"
   },
   "api": {
-    "projectId": "zhxqf9jz",
+    "projectId": "zhxqf9jz" ,
     "dataset": "production"
   },
   "plugins": [
